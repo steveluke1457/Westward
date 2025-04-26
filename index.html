@@ -1,49 +1,79 @@
-# Westward - A Journey into the Wild West
-
-## Requirement Summary
-This document outlines three different HTML solutions for creating a cowboy-themed website for the game "Westward," set in the year 1830. Each solution incorporates unique design elements and features to enhance user engagement.
-
-## Code Generated #1: Basic Cowboy Style Website
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Westward - The Wild West Adventure</title>
-    <style>
-        body {
-            background-color: #f4e1c1;
-            font-family: 'Georgia', serif;
-            color: #4b3d2e;
-            text-align: center;
-            animation: move 10s infinite linear;
-        }
-        @keyframes move {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-        h1 {
-            font-size: 3em;
-            margin-top: 20px;
-        }
-        p {
-            font-size: 1.2em;
-            margin: 20px;
-        }
-    </style>
+    <title>Westward - A Roblox Frontier Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Staatliches&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Howdy, Partner!</h1>
-    <p>Welcome to Westward, a multiplayer open-world game set during the wild and gritty days of U.S. western expansion (1803–1861).</p>
-    <h2>What’s the game actually about?</h2>
-    <ul>
-        <li><em>Build stuff</em> – Form towns, build up communities, or start your own tribe.</li>
-        <li><em>Explore huge maps</em> – Inspired by Yellowstone and other gorgeous spots from the American West.</li>
-        <li><em>Choose your side</em> – Settlers or tribal leaders.</li>
-        <li><em>Make your own story</em> – Be peaceful, aggressive, sneaky, or creative.</li>
-        <li><em>Mess around with friends</em> – Just don’t get shot!</li>
-    </ul>
+
+    <audio autoplay loop id="background-music">
+        <source src="https://cdn.pixabay.com/download/audio/2022/08/01/audio_49d6b15515.mp3?filename=western-music-113142.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="background">
+        <div class="clouds"></div>
+        <div class="tumbleweed"></div>
+    </div>
+
+    <header>
+        <h1>Westward</h1>
+        <p>Build. Explore. Survive. Create Your Story.</p>
+        <button onclick="window.open('https://discord.gg/ahhgpuPYM3','_blank')">Join Us</button>
+    </header>
+
+    <main>
+        <section>
+            <h2>About Westward – What Even Is This Game?</h2>
+            <p>Howdy, partner. Welcome to <strong>Westward</strong>, a multiplayer open-world game set during the wild and gritty days of U.S. western expansion (1803–1861). But this ain’t just another cowboy game. Here’s the deal:</p>
+        </section>
+
+        <section>
+            <h3>What’s the game actually about?</h3>
+            <ul>
+                <li><strong>Build stuff</strong> – Form towns, build up communities, or start your own tribe. Play solo or with friends.</li>
+                <li><strong>Explore huge maps</strong> – Inspired by Yellowstone, southern Utah, and other gorgeous spots from the American West.</li>
+                <li><strong>Choose your side</strong> – Settlers looking for a new life, or tribal leaders protecting their land.</li>
+                <li><strong>Make your own story</strong> – Be peaceful, aggressive, sneaky, creative… we won’t stop you.</li>
+                <li><strong>Mess around with friends</strong> – Or strangers. Or frenemies. Just don’t get shot. Or do. It’s your journey.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Wait… what’s the Cyfrex thing?</h3>
+            <ul>
+                <li>The Cyfrex are a DLC faction — a cold-adapted lizard race with feathers, honor, and great hair (if feathers count).</li>
+                <li>They use hit-and-run tactics and have deep spiritual beliefs tied to the land.</li>
+                <li>You won’t meet them right away… but when you do, you’ll remember.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>So what’s this server for?</h3>
+            <ul>
+                <li>We’re building the game right now and we need creative volunteers (writers, artists, devs, lore nerds, anyone cool).</li>
+                <li>We want a place where fans and curious folks can chill, chat, and keep up with progress.</li>
+                <li>Basically: if you think building something awesome from scratch with a cool community sounds fun, you’re in the right place.</li>
+            </ul>
+        </section>
+
+        <section class="notes">
+            <h3>Important notes:</h3>
+            <ul>
+                <li>There are no dumb questions.</li>
+                <li>Feedback is gold.</li>
+                <li>You don’t need to be a pro — just be excited.</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Saddle up. Let’s build the frontier. &copy; 2025 Westward Studios</p>
+        </footer>
+    </main>
+
 </body>
-</html>
+                </html>
