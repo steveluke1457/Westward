@@ -1,79 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Westward - A Roblox Frontier Adventure</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Staatliches&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Westward - Frontier Awaits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1585081044267-80440f6b19b3?crop=entropy&cs=tinysrgb&fit=crop&h=1200&w=1920') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Special Elite', cursive;
+      color: #e0c097;
+      overflow-x: hidden;
+    }
+
+    #start-screen {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://images.unsplash.com/photo-1604335399104-bf4a1e0f0367?crop=entropy&cs=tinysrgb&fit=crop&h=800&w=1600') center/cover no-repeat;
+      background-color: rgba(222, 184, 135, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1000;
+      transition: opacity 1s ease;
+    }
+
+    #start-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #start-screen h1 {
+      font-family: 'Ruslan Display', cursive;
+      color: #5c4033;
+      font-size: 3em;
+      text-shadow: 2px 2px 4px #000;
+      margin-bottom: 20px;
+    }
+
+    #main-content {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      margin-top: 50px;
+      box-shadow: 0px 0px 20px #5c4033;
+    }
+
+    h1, h2 {
+      font-family: 'Ruslan Display', cursive;
+    }
+
+    p, li {
+      font-size: 1.2em;
+      line-height: 1.6em;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    #join-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #5c4033;
+      color: #fff0d6;
+      text-decoration: none;
+      font-size: 1.4em;
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px #000;
+      transition: background 0.3s;
+    }
+
+    #join-button:hover {
+      background: #7b5a42;
+    }
+  </style>
 </head>
 <body>
 
-    <audio autoplay loop id="background-music">
-        <source src="https://cdn.pixabay.com/download/audio/2022/08/01/audio_49d6b15515.mp3?filename=western-music-113142.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+<div id="start-screen">
+  <h1>Tap to Begin Your Adventure</h1>
+</div>
 
-    <div class="background">
-        <div class="clouds"></div>
-        <div class="tumbleweed"></div>
-    </div>
+<audio id="bg-music" loop>
+  <source src="Cowboy Standoff Music Sound Effect-yt.savetube.me.mp3" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
 
-    <header>
-        <h1>Westward</h1>
-        <p>Build. Explore. Survive. Create Your Story.</p>
-        <button onclick="window.open('https://discord.gg/ahhgpuPYM3','_blank')">Join Us</button>
-    </header>
+<div id="main-content" style="display:none;">
+  <h1>About Westward – What Even Is This Game?</h1>
+  <p>Howdy, partner. Welcome to <strong>Westward</strong>, a multiplayer open-world game set during the wild and gritty days of U.S. western expansion (1803–1861).</p>
 
-    <main>
-        <section>
-            <h2>About Westward – What Even Is This Game?</h2>
-            <p>Howdy, partner. Welcome to <strong>Westward</strong>, a multiplayer open-world game set during the wild and gritty days of U.S. western expansion (1803–1861). But this ain’t just another cowboy game. Here’s the deal:</p>
-        </section>
+  <h2>What’s the game actually about?</h2>
+  <ul>
+    <li><strong>Build stuff</strong> – Form towns, build communities, or start your own tribe.</li>
+    <li><strong>Explore huge maps</strong> – Inspired by Yellowstone, Utah, and the American West.</li>
+    <li><strong>Choose your side</strong> – Settlers or Tribal Leaders.</li>
+    <li><strong>Make your own story</strong> – Be peaceful, aggressive, creative... it's your journey.</li>
+    <li><strong>Mess around with friends</strong> – Or strangers. It's your call.</li>
+  </ul>
 
-        <section>
-            <h3>What’s the game actually about?</h3>
-            <ul>
-                <li><strong>Build stuff</strong> – Form towns, build up communities, or start your own tribe. Play solo or with friends.</li>
-                <li><strong>Explore huge maps</strong> – Inspired by Yellowstone, southern Utah, and other gorgeous spots from the American West.</li>
-                <li><strong>Choose your side</strong> – Settlers looking for a new life, or tribal leaders protecting their land.</li>
-                <li><strong>Make your own story</strong> – Be peaceful, aggressive, sneaky, creative… we won’t stop you.</li>
-                <li><strong>Mess around with friends</strong> – Or strangers. Or frenemies. Just don’t get shot. Or do. It’s your journey.</li>
-            </ul>
-        </section>
+  <h2>Wait... what’s the Cyfrex thing?</h2>
+  <ul>
+    <li>DLC faction – cold-adapted lizard race with honor and feathers.</li>
+    <li>Special tactics: hit-and-run, spiritual beliefs.</li>
+    <li>You'll meet them... eventually.</li>
+  </ul>
 
-        <section>
-            <h3>Wait… what’s the Cyfrex thing?</h3>
-            <ul>
-                <li>The Cyfrex are a DLC faction — a cold-adapted lizard race with feathers, honor, and great hair (if feathers count).</li>
-                <li>They use hit-and-run tactics and have deep spiritual beliefs tied to the land.</li>
-                <li>You won’t meet them right away… but when you do, you’ll remember.</li>
-            </ul>
-        </section>
+  <h2>Why this server?</h2>
+  <ul>
+    <li>We're building Westward now. Volunteers needed!</li>
+    <li>Writers, artists, devs, lore nerds – anyone cool welcome.</li>
+    <li>Feedback is gold. Questions are good. Excitement is everything.</li>
+  </ul>
 
-        <section>
-            <h3>So what’s this server for?</h3>
-            <ul>
-                <li>We’re building the game right now and we need creative volunteers (writers, artists, devs, lore nerds, anyone cool).</li>
-                <li>We want a place where fans and curious folks can chill, chat, and keep up with progress.</li>
-                <li>Basically: if you think building something awesome from scratch with a cool community sounds fun, you’re in the right place.</li>
-            </ul>
-        </section>
+  <a id="join-button" href="https://discord.gg/ahhgpuPYM3" target="_blank">Join Us</a>
+</div>
 
-        <section class="notes">
-            <h3>Important notes:</h3>
-            <ul>
-                <li>There are no dumb questions.</li>
-                <li>Feedback is gold.</li>
-                <li>You don’t need to be a pro — just be excited.</li>
-            </ul>
-        </section>
+<script>
+const music = document.getElementById('bg-music');
+const startScreen = document.getElementById('start-screen');
+const mainContent = document.getElementById('main-content');
 
-        <footer>
-            <p>Saddle up. Let’s build the frontier. &copy; 2025 Westward Studios</p>
-        </footer>
-    </main>
+function startAdventure() {
+  startScreen.classList.add('hidden');
+  setTimeout(() => {
+    startScreen.style.display = 'none';
+    mainContent.style.display = 'block';
+    music.volume = 0.5;
+    music.play();
+  }, 1000);
+}
+
+// Detect if mobile
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+if (!isMobile) {
+  // On PC, auto start immediately
+  window.addEventListener('load', () => {
+    startScreen.classList.add('hidden');
+    setTimeout(() => {
+      startScreen.style.display = 'none';
+      mainContent.style.display = 'block';
+      music.volume = 0.5;
+      music.play();
+    }, 500);
+  });
+} else {
+  // On mobile, wait for user tap
+  startScreen.addEventListener('click', startAdventure);
+}
+</script>
 
 </body>
-                </html>
+    </html>
+        
