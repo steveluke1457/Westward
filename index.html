@@ -5,112 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Westward - Frontier Awaits</title>
 
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Special+Elite&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('https://4kwallpapers.com/images/walls/thumbs_2t/16068.jpeg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Special Elite', cursive;
-      color: #e0c097;
-      overflow-x: hidden;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        background: url('https://i.pinimg.com/736x/c8/f8/15/c8f815d64c79ab7177396c1d6f1c9eac.jpg') no-repeat center center fixed;
-        background-size: cover;
-      }
-    }
-
-    #start-screen {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(222, 184, 135, 0.85);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 1000;
-      transition: opacity 1s ease;
-    }
-
-    #start-screen.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    #start-screen h1 {
-      font-family: 'Ruslan Display', cursive;
-      color: #5c4033;
-      font-size: 3em;
-      text-shadow: 2px 2px 4px #000;
-      margin-bottom: 20px;
-    }
-
-    #main-content {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 15px;
-      margin-top: 50px;
-      box-shadow: 0px 0px 20px #5c4033;
-      backdrop-filter: blur(5px);
-      display: none;
-    }
-
-    h1, h2 {
-      font-family: 'Ruslan Display', cursive;
-      color: #ffd89b;
-      text-shadow: 2px 2px 5px #000;
-    }
-
-    p, li {
-      font-size: 1.2em;
-      line-height: 1.6em;
-      color: #ffe4b5;
-      text-shadow: 1px 1px 3px #000;
-    }
-
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-
-    #join-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background: #5c4033;
-      color: #fff0d6;
-      text-decoration: none;
-      font-size: 1.4em;
-      border-radius: 10px;
-      box-shadow: 3px 3px 10px #000;
-      transition: background 0.3s;
-    }
-
-    #join-button:hover {
-      background: #7b5a42;
-    }
-
-    /* Fade-in effect for main content */
-    #main-content.show {
-      display: block;
-      animation: fadeIn 1.5s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-
 </head>
 
 <body>
@@ -118,6 +17,7 @@
 <!-- Background Music -->
 <audio autoplay loop>
   <source src="Cowboy%20Standoff%20Music%20Sound%20Effect.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
 
 <!-- Start Screen -->
@@ -169,11 +69,9 @@
     }, 1000);
   }
 
-  // Detect if mobile
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   if (!isMobile) {
-    // On PC, auto start immediately
     window.addEventListener('load', () => {
       startScreen.classList.add('hidden');
       setTimeout(() => {
@@ -182,7 +80,6 @@
       }, 500);
     });
   } else {
-    // On mobile, wait for user tap
     startScreen.addEventListener('click', startAdventure);
   }
 </script>
