@@ -1,25 +1,98 @@
-/* style.css */
+body {
+  margin: 0;
+  padding: 0;
+  background: url('https://4kwallpapers.com/images/walls/thumbs_2t/16068.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Special Elite', cursive;
+  color: #e0c097;
+  overflow-x: hidden;
+}
 
-body { margin: 0; padding: 0; background: url('https://images.unsplash.com/photo-1591302533807-3f0f879cad5f?crop=entropy&cs=tinysrgb&fit=crop&h=1200&w=1920') no-repeat center center fixed; background-size: cover; font-family: 'Special Elite', cursive; color: #f4e4c1; overflow-x: hidden; }
+@media (max-width: 768px) {
+  body {
+    background: url('https://i.pinimg.com/736x/c8/f8/15/c8f815d64c79ab7177396c1d6f1c9eac.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+}
 
-#start-screen { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(222, 184, 135, 0.9); display: flex; justify-content: center; align-items: center; flex-direction: column; z-index: 1000; transition: opacity 1s ease; text-align: center; }
+#start-screen {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(222, 184, 135, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  transition: opacity 1s ease;
+}
 
-#start-screen.hidden { opacity: 0; pointer-events: none; }
+#start-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
-#start-screen h1 { font-family: 'Ruslan Display', cursive; color: #5c4033; font-size: 3em; text-shadow: 3px 3px 5px #000; margin-bottom: 20px; }
+#start-screen h1 {
+  font-family: 'Ruslan Display', cursive;
+  color: #5c4033;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px #000;
+  margin-bottom: 20px;
+}
 
-#main-content { padding: 30px; margin: 40px 20px; background: rgba(0, 0, 0, 0.5) url('https://images.unsplash.com/photo-1601172645416-d8099f910b2c?crop=entropy&cs=tinysrgb&fit=crop&h=800&w=1600') center/cover no-repeat; border-radius: 20px; box-shadow: 0px 0px 30px #000000; max-width: 1000px; margin-left: auto; margin-right: auto; backdrop-filter: blur(3px); }
+#main-content {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  margin-top: 50px;
+  box-shadow: 0px 0px 20px #5c4033;
+  backdrop-filter: blur(5px);
+  display: none;
+}
 
-h1, h2 { font-family: 'Ruslan Display', cursive; color: #ffd89b; text-shadow: 2px 2px 5px #000; }
+h1, h2 {
+  font-family: 'Ruslan Display', cursive;
+  color: #ffd89b;
+  text-shadow: 2px 2px 5px #000;
+}
 
-p, li { font-size: 1.1em; line-height: 1.7em; color: #ffe4b5; text-shadow: 1px 1px 3px #000; }
+p, li {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #ffe4b5;
+  text-shadow: 1px 1px 3px #000;
+}
 
-ul { list-style-type: square; padding-left: 25px; }
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
 
-#join-button { display: inline-block; margin-top: 30px; padding: 15px 35px; background: #7b3f00; color: #fff0d6; text-decoration: none; font-size: 1.5em; border-radius: 15px; box-shadow: 4px 4px 15px #000; transition: background 0.3s, transform 0.2s; }
+#join-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: #5c4033;
+  color: #fff0d6;
+  text-decoration: none;
+  font-size: 1.4em;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #000;
+  transition: background 0.3s;
+}
 
-#join-button:hover { background: #9c5c24; transform: scale(1.05); }
+#join-button:hover {
+  background: #7b5a42;
+}
 
-@media (max-width: 600px) { #main-content { margin: 20px 10px; padding: 20px; } #start-screen h1 { font-size: 2.2em; } #join-button { font-size: 1.2em; padding: 12px 25px; } }
+#main-content.show {
+  display: block;
+  animation: fadeIn 1.5s ease forwards;
+}
 
-               
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
