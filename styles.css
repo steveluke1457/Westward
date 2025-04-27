@@ -8,6 +8,7 @@ body {
   overflow-x: hidden;
 }
 
+/* For mobile screens */
 @media (max-width: 768px) {
   body {
     background: url('https://i.pinimg.com/736x/c8/f8/15/c8f815d64c79ab7177396c1d6f1c9eac.jpg') no-repeat center center fixed;
@@ -49,7 +50,6 @@ body {
   margin-top: 50px;
   box-shadow: 0px 0px 20px #5c4033;
   backdrop-filter: blur(5px);
-  display: none;
 }
 
 h1, h2 {
@@ -85,14 +85,4 @@ ul {
 
 #join-button:hover {
   background: #7b5a42;
-}
-
-#main-content.show {
-  display: block;
-  animation: fadeIn 1.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
