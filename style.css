@@ -1,0 +1,111 @@
+/* Reset browser default styles */
+body, h1, h2, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('https://images.unsplash.com/photo-1493875738533-764e6d7e7d8e?crop=entropy&cs=tinysrgb&fit=crop&h=1200&w=1920') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Start Screen Styles */
+#start-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  opacity: 1;
+  text-align: center;
+  transition: opacity 1s ease;
+}
+
+#start-screen h1 {
+  font-size: 3em;
+  color: #ffb74d;
+  text-shadow: 3px 3px 5px #000;
+  margin-bottom: 20px;
+}
+
+#start-screen p {
+  font-size: 1.5em;
+  color: #fff;
+  text-shadow: 2px 2px 5px #000;
+  cursor: pointer;
+}
+
+.dustball {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at center, #a0522d 0%, #8b4513 60%, transparent 70%);
+  border-radius: 50%;
+  animation: roll 6s infinite;
+}
+
+@keyframes roll {
+  0% { transform: translateX(-100px) rotate(0deg); }
+  50% { transform: translateX(100px) rotate(180deg); }
+  100% { transform: translateX(-100px) rotate(360deg); }
+}
+
+/* Main Content Styles */
+#main-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px 10px #3e2723;
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+#main-content h1 {
+  font-size: 3em;
+  color: #ffb74d;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px #000;
+}
+
+#main-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#main-content ul li {
+  font-size: 1.3em;
+  line-height: 2;
+  color: #ffd54f;
+  text-shadow: 1px 1px 3px #000;
+}
+
+#join-button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background-color: #ff7043;
+  color: white;
+  font-size: 1.4em;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#join-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
