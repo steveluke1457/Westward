@@ -3,46 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cowboy Standoff</title>
+  <title>Westward - Frontier Awaits</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Audio for background music -->
+<!-- Start screen with animation -->
+<div id="start-screen">
+  <h1>Tap to Begin Your Adventure</h1>
+  <div class="dustball"></div>
+</div>
+
+<!-- Hidden music player -->
 <audio id="background-music" src="cowboy-standoff.mp3" loop autoplay style="display: none;"></audio>
 
-<!-- Start Screen -->
-<div id="start-screen">
-  <h1>Get Ready for the Standoff</h1>
-  <div class="dustball"></div>
-  <p>Click to Begin Your Adventure</p>
-</div>
-
-<!-- Main Content -->
+<!-- Main content hidden initially -->
 <div id="main-content" style="display: none;">
-  <h1>Welcome to the Wild West</h1>
-  <p>Step into the rugged world of cowboys, settlers, and dangerous landscapes. The frontier awaits!</p>
-  
-  <h2>Game Features</h2>
+  <h1>About Westward – What Even Is This Game?</h1>
+  <p>Howdy, partner. Welcome to <strong>Westward</strong>, a multiplayer open-world game set during the wild and gritty days of U.S. western expansion (1803–1861).</p>
+
+  <h2>What’s the game actually about?</h2>
   <ul>
-    <li><strong>Build your empire:</strong> Create towns, trade routes, and more.</li>
-    <li><strong>Choose your path:</strong> Be a ruthless outlaw or a noble sheriff.</li>
-    <li><strong>Explore vast maps:</strong> From deserts to mountains, the West is yours to conquer.</li>
-    <li><strong>Compete with friends:</strong> Team up or go head-to-head in epic shootouts!</li>
+    <li><strong>Build stuff</strong> – Form towns, build communities, or start your own tribe.</li>
+    <li><strong>Explore huge maps</strong> – Inspired by Yellowstone, Utah, and the American West.</li>
+    <li><strong>Choose your side</strong> – Settlers or Tribal Leaders.</li>
+    <li><strong>Make your own story</strong> – Be peaceful, aggressive, creative... it's your journey.</li>
+    <li><strong>Mess around with friends</strong> – Or strangers. It's your call.</li>
   </ul>
 
-  <h2>Join the Standoff</h2>
-  <a href="https://discord.gg/ahhgpuPYM3" id="join-button" target="_blank">Join Us Now</a>
+  <h2>Wait... what’s the Cyfrex thing?</h2>
+  <ul>
+    <li>DLC faction – cold-adapted lizard race with honor and feathers.</li>
+    <li>Special tactics: hit-and-run, spiritual beliefs.</li>
+    <li>You'll meet them... eventually.</li>
+  </ul>
+
+  <h2>Why this server?</h2>
+  <ul>
+    <li>We're building Westward now. Volunteers needed!</li>
+    <li>Writers, artists, devs, lore nerds – anyone cool welcome.</li>
+    <li>Feedback is gold. Questions are good. Excitement is everything.</li>
+  </ul>
+
+  <a id="join-button" href="https://discord.gg/ahhgpuPYM3" target="_blank">Join Us</a>
 </div>
 
-<!-- JavaScript to control interaction -->
 <script>
 const startScreen = document.getElementById('start-screen');
 const mainContent = document.getElementById('main-content');
 const music = document.getElementById('background-music');
 
 function startAdventure() {
-  startScreen.style.opacity = 0;
+  startScreen.classList.add('hidden');
   setTimeout(() => {
     startScreen.style.display = 'none';
     mainContent.style.display = 'block';
@@ -50,13 +62,20 @@ function startAdventure() {
   }, 1000);
 }
 
-// Trigger start screen on click for mobile or instantly on PC
-if (window.innerWidth < 768) {
-  startScreen.addEventListener('click', startAdventure);
-} else {
+// Detect if mobile
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+if (!isMobile) {
   window.addEventListener('load', () => {
-    setTimeout(startAdventure, 1000);  // Auto start after loading for PC
+    startScreen.classList.add('hidden');
+    setTimeout(() => {
+      startScreen.style.display = 'none';
+      mainContent.style.display = 'block';
+      music.play();
+    }, 500);
   });
+} else {
+  startScreen.addEventListener('click', startAdventure);
 }
 </script>
 
