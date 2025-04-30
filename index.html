@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Westward - Frontier Awaits</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Start screen with animation -->
 <div id="start-screen">
   <h1>Tap to Begin Your Adventure</h1>
-  <div class="dustball"></div>
 </div>
 
-<!-- Hidden music player -->
-<audio id="background-music" src="cowboy-standoff.mp3" loop autoplay style="display: none;"></audio>
+<!-- Music Player (Hidden) -->
+<audio id="background-music" loop>
+  <source src="cowboy-standoff.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
-<!-- Main content hidden initially -->
-<div id="main-content" style="display: none;">
+<div id="main-content" style="display:none;">
   <h1>About Westward – What Even Is This Game?</h1>
   <p>Howdy, partner. Welcome to <strong>Westward</strong>, a multiplayer open-world game set during the wild and gritty days of U.S. western expansion (1803–1861).</p>
 
@@ -51,30 +51,32 @@
 <script>
 const startScreen = document.getElementById('start-screen');
 const mainContent = document.getElementById('main-content');
-const music = document.getElementById('background-music');
+const backgroundMusic = document.getElementById('background-music');
 
 function startAdventure() {
   startScreen.classList.add('hidden');
   setTimeout(() => {
     startScreen.style.display = 'none';
     mainContent.style.display = 'block';
-    music.play();
+    backgroundMusic.play();
   }, 1000);
 }
 
-// Detect if mobile
+// Detect mobile
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 if (!isMobile) {
+  // On PC, auto start immediately
   window.addEventListener('load', () => {
     startScreen.classList.add('hidden');
     setTimeout(() => {
       startScreen.style.display = 'none';
       mainContent.style.display = 'block';
-      music.play();
+      backgroundMusic.play();
     }, 500);
   });
 } else {
+  // On mobile, wait for user tap
   startScreen.addEventListener('click', startAdventure);
 }
 </script>
