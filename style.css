@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 
-/* For mobile screens */
+/* Mobile Background */
 @media (max-width: 768px) {
   body {
     background: url('https://i.pinimg.com/736x/c8/f8/15/c8f815d64c79ab7177396c1d6f1c9eac.jpg') no-repeat center center fixed;
